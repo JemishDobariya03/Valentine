@@ -1,0 +1,46 @@
+/* Description: Custom animations for floating hearts, glowing effects, and pop-in effects */
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    100% {
+        transform: translateY(-20vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 0 rgba(255, 105, 180, 0.4); }
+    100% { box-shadow: 0 0 60px rgba(255, 105, 180, 0.9); }
+}
+
+.animate-float {
+    animation: floatUp linear infinite;
+}
+
+.animate-glow {
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.animate-pop {
+    animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-4px) rotate(-2deg); }
+    40% { transform: translateX(4px) rotate(2deg); }
+    60% { transform: translateX(-3px) rotate(-1deg); }
+    80% { transform: translateX(3px) rotate(1deg); }
+    100% { transform: translateX(0); }
+}
+
+.animate-shake {
+    animation: shake 0.25s ease-in-out;
+}
