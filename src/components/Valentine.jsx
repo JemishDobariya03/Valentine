@@ -12,7 +12,6 @@ const noMessages = [
     "Alright. Enough drama. You’re clearly meant to say Yes 💖"
 ];
 
-/* ------------------ AI MESSAGE ------------------ */
 function generateValentineMessage(name = "You") {
     const openers = [
         "I was going to write something simple, but my heart had other plans.",
@@ -33,13 +32,11 @@ function generateValentineMessage(name = "You") {
     return `${pick(openers)} ${pick(middles)} ${pick(closers)}`;
 }
 
-/* ------------------ THEMES ------------------ */
 const themes = {
     pink: "from-pink-100 via-pink-200 to-rose-200",
     dark: "from-zinc-900 via-rose-900 to-black"
 };
 
-/* ------------------ FLOATING HEARTS ------------------ */
 function FloatingHearts() {
     return (
         <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
@@ -61,7 +58,6 @@ function FloatingHearts() {
     );
 }
 
-/* ------------------ MAIN COMPONENT ------------------ */
 export default function Valentine() {
     const zoneRef = useRef(null);
     const noBtnRef = useRef(null);
@@ -71,11 +67,9 @@ export default function Valentine() {
     const [theme, setTheme] = useState("pink");
     const [yesScale, setYesScale] = useState(1);
     const [noStage, setNoStage] = useState(0);
-    const [forceYes, setForceYes] = useState(false);
 
     const name = "Khushboo";
 
-    /* ---------- CONFETTI ---------- */
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -98,7 +92,6 @@ export default function Valentine() {
             origin: { x: 0.5, y: 0.5 }
         });
     };
-    /* ---------- NO BUTTON ---------- */
     const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
     const moveNo = (x, y) => {
@@ -128,8 +121,6 @@ export default function Valentine() {
         <div className={`min-h-screen bg-gradient-to-br ${themes[theme]} transition-colors duration-700`}>
             <FloatingHearts />
             <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-50" />
-
-            {/* THEME SWITCHER */}
             <div className="fixed top-4 right-4 z-20 flex gap-2">
                 {Object.keys(themes).map(t => (
                     <button
@@ -142,8 +133,6 @@ export default function Valentine() {
                     />
                 ))}
             </div>
-
-            {/* CENTER CARD */}
             <div className="min-h-screen flex items-center justify-center">
                 <main className="relative z-10 w-[92vw] max-w-xl rounded-3xl p-8 text-center shadow-2xl bg-white/80 backdrop-blur-xl">
 
@@ -177,7 +166,7 @@ export default function Valentine() {
                                         <p
                                             key={i}
                                             className={`text-lg font-semibold animate-pop transition-all
-          ${i === noStage
+                                            ${i === noStage
                                                 ? "text-pink-600 scale-105"
                                                 : "text-pink-400 opacity-70"
                                             }`}
@@ -211,8 +200,8 @@ export default function Valentine() {
                                         boxShadow: yesScale > 1.6 ? "0 0 40px rgba(236,72,153,.9)" : undefined
                                     }}
                                     className="absolute left-[18%] top-1/2 bg-pink-500
-    hover:bg-pink-600 text-white px-8 py-4 rounded-full
-    font-bold shadow-lg transition animate-glow"
+                                            hover:bg-pink-600 text-white px-8 py-4 rounded-full
+                                            font-bold shadow-lg transition animate-glow"
                                 >
                                     Yes 💘
                                 </button>
@@ -235,11 +224,11 @@ export default function Valentine() {
                                     }}
 
                                     className={`absolute left-[62%] top-1/2 -translate-y-1/2 
-    px-8 py-4 rounded-full font-bold shadow-lg select-none
-    transition-all duration-300
-    ${noStage > 4 ? "opacity-60 rotate-6" : ""}
-    ${noStage > 6 ? "scale-75 blur-[1px]" : ""}
-    bg-gray-200`}
+                                    px-8 py-4 rounded-full font-bold shadow-lg select-none
+                                    transition-all duration-300
+                                    ${noStage > 4 ? "opacity-60 rotate-6" : ""}
+                                    ${noStage > 6 ? "scale-75 blur-[1px]" : ""}
+                                    bg-gray-200`}
                                 >
                                     No 😐
                                 </button>
