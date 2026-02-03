@@ -1,0 +1,67 @@
+Create a single-page interactive Valentine website with the following EXACT design and behavior.
+
+Partner’s name: [partner Name ]
+
+LAYOUT:
+- Full-screen soft pink gradient background.
+- Floating heart emojis drifting upward across the entire screen.
+- A centered white glassmorphism card (rounded corners, soft shadow, blur effect).
+- Card stays perfectly centered on all screen sizes.
+
+CARD CONTENT:
+- Big bold heading:
+  “Will you be my Valentine? 💖”
+- Below the heading, place two buttons in a standard horizontal layout:
+  - “Yes 💘” button on the LEFT
+  - “No 😈” button on the RIGHT
+- This initial layout must look clean and normal (no movement at first).
+
+YES BUTTON:
+- Pink gradient button
+- Rounded pill shape
+- Slight glowing animation
+- When the “No” button escapes, the “Yes” button should slowly grow larger.
+- Clicking “Yes” triggers celebration.
+
+NO BUTTON (IMPORTANT BEHAVIOR):
+- Initially behaves like a normal button.
+- When the cursor or finger comes CLOSE:
+  1) The button SHAKES briefly.
+  2) Then it moves a SMALL distance away from the cursor.
+- The movement should feel playful and teasing, not aggressive.
+- The button MUST:
+  - Be impossible to click
+  - Never disappear
+  - Move anywhere on the full screen (not limited to the card)
+  - Stay fully inside the viewport at all times
+- On mobile, tapping near the “No” button should also make it dodge.
+
+INTERACTIONS:
+- Mouse proximity triggers shake → dodge behavior.
+- Each dodge slightly increases the size of the “Yes” button.
+- Motion should be smooth and natural.
+
+ON YES CLICK:
+- Fire confetti animation from the center.
+- Increase floating hearts.
+- Replace the card content with a romantic celebration message that includes the partner’s name.
+- Message tone:
+  emotional, soft, sincere, slightly dramatic.
+- Example style:
+  “I tried to be brave, but my heart already knew the answer.”
+
+ANIMATION STYLE:
+- Soft
+- Romantic
+- Smooth easing
+- No harsh motion
+- Clean modern UI
+
+MOBILE:
+- Fully responsive
+- Touch-friendly
+- Same teasing No-button behavior on tap proximity
+
+FINAL STEP:
+- Publish the website
+- Give me a shareable live link
